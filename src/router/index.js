@@ -6,6 +6,7 @@ import Dashboard from '../views/Dashboard.vue'
 import auth from '@/middleware/auth'
 import subscribed from '@/middleware/subscribed'
 import middlewarePipeline from './middlewarePipeline'
+import store from '@/store'
 
 const routes = [
   {
@@ -54,6 +55,7 @@ router.beforeEach((to,from,next) => {
   const context = {
     to,
     from,
+    store,
     next
   }
 
